@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFL Draft Analytics | Quinn Glenn</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero" style="padding: 2.5rem 2rem;">
+        <div class="content" style="text-align: center;">
+            <a href="../index.html" class="back-link">← Back to Portfolio</a>
+            <h1 style="font-size: 2.8rem; margin-top: 1rem;">NFL Draft Analytics</h1>
+            <p class="subtitle" style="color: #AFDDE5;">Wide Receiver Analysis · 2017–2025</p>
+        </div>
+    </header>
+
+    <!-- ===== PROJECT OVERVIEW ===== -->
+    <section class="about">
+        <div class="content">
+            <h2>Project Overview</h2>
+            <p>This project explores the relationship between college production, combine athleticism, and NFL success for wide receivers drafted from 2017 to 2025. The goal was to identify which metrics actually predict professional performance and where teams find the best value in the draft.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1.5rem;">
+                <div>
+                    <strong style="color: #003135;">Tools Used</strong>
+                    <div class="skills" style="margin-top: 0.5rem;">
+                        <span class="skill">Python</span>
+                        <span class="skill">Pandas</span>
+                        <span class="skill">SQL</span>
+                        <span class="skill">SQLite</span>
+                        <span class="skill">Matplotlib</span>
+                    </div>
+                </div>
+                <div>
+                    <strong style="color: #003135;">Key Questions</strong>
+                    <ul style="margin-top: 0.5rem; padding-left: 1.2rem; color: #024950;">
+                        <li>Which college stats matter most for NFL success?</li>
+                        <li>What's the hit rate by draft round?</li>
+                        <li>Does athleticism predict performance?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NOTEBOOKS GRID ===== -->
+    <section class="projects" style="background: white;">
+        <div class="content">
+            <h2>Analysis Notebooks</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>01 · Draft Hit Rate</h3>
+                    <p>Developed a tiered classification system to evaluate WR success based on statistical thresholds. Analyzed hit rates by draft round to identify value picks.</p>
+                    <div class="tech">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                    </div>
+                    <a href="notebooks/01_draft_hit_rate.html" class="btn">View Notebook</a>
+                </div>
+
+                <div class="card">
+                    <h3>02 · College Production vs. Draft Position</h3>
+                    <p>Analyzed how college yards per game correlate with where receivers are drafted, segmented by conference strength.</p>
+                    <div class="tech">
+                        <span>SQL</span>
+                        <span>Stats</span>
+                    </div>
+                    <a href="notebooks/02_college_ypg_analysis.html" class="btn">View Notebook</a>
+                </div>
+
+                <div class="card">
+                    <h3>03 · Combine Scatter Plot</h3>
+                    <p>Multi-dimensional visualization showing college production vs. 40-yard dash time, with point size indicating draft position and color representing conference tier.</p>
+                    <div class="tech">
+                        <span>Matplotlib</span>
+                        <span>Viz</span>
+                    </div>
+                    <a href="notebooks/03_combine_scatter.html" class="btn">View Notebook</a>
+                </div>
+
+                <div class="card">
+                    <h3>04 · Predictive NFL Success</h3>
+                    <p>Analyzed Next Gen Stats to discover that YAC above expected is the strongest separator between Elite and Bust receivers. Tested which college stats actually predict NFL success.</p>
+                    <div class="tech">
+                        <span>Matplotlib</span>
+                        <span>Viz</span>
+                    </div>
+                    <a href="notebooks/04_predictive_NFL_success.html" class="btn">View Notebook</a>
+                </div>
+
+                <div class="card">
+                    <h3>📖 Complete README</h3>
+                    <p>Full documentation for the WR analysis—methodology, key findings, limitations, and lessons learned across all four notebooks.</p>
+                    <div class="tech">
+                        <span>Docs</span>
+                        <span>Portfolio</span>
+                    </div>
+                    <a href="https://github.com/QuinnG8/nfl-draft-analytics/blob/main/wide_receivers/README.md" class="btn" target="_blank">View README</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KEY VISUALIZATIONS ===== -->
+    <section class="visuals" style="background: #AFDDE5;">
+        <div class="content">
+            <h2>Key Visualizations</h2>
+            <div class="visual-grid">
+                <div class="visual-item">
+                    <img src="images/wr_draft_hit_rates.png" alt="WR Draft Hit Rates" style="width:100%; height:100%; object-fit:cover; border-radius:8px;" />
+                </div>
+                <div class="visual-item">
+                    <img src="images/college_ypg_by_draft_range.png" alt="College YPG by Draft Position" style="width:100%; height:100%; object-fit:cover; border-radius:8px;" />
+                </div>
+                <div class="visual-item">
+                    <img src="images/wr_draft_scatter_by_pick.png" alt="College Production vs Athleticism" style="width:100%; height:100%; object-fit:cover; border-radius:8px;" />
+                </div>
+                <div class="visual-item">
+                    <img src="images/college_ypg_by_draft_range_stacked.png" alt="College YPG vs Draft Position" style="width:100%; height:100%; object-fit:cover; border-radius:8px;" />
+                </div>
+                <div class="visual-item">
+                    <img src="images/wr_metrics_by_draft_position.png" alt="Draft Position vs Athleticism/Production" style="width:100%; height:100%; object-fit:cover; border-radius:8px;" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KEY TAKEAWAYS ===== -->
+    <section class="experience" style="background: white;">
+        <div class="content">
+            <h2>Key Takeaways &amp; Next Steps</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <h3 style="color: #003135;">📊 Key Findings</h3>
+                    <ul style="padding-left: 1.2rem; color: #024950;">
+                        <li>YAC above expected is the strongest separator between Elite and Bust receivers</li>
+                        <li>College yards per game strongly correlates with draft position</li>
+                        <li>Hit rates drop sharply after Round 3</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #003135;">🚀 What's Next</h3>
+                    <ul style="padding-left: 1.2rem; color: #024950;">
+                        <li>Add QB and RB position analysis</li>
+                        <li>Build an interactive dashboard</li>
+                        <li>Create a predictive model for draft success</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; text-align: center;">
+                <a href="https://github.com/QuinnG8/nfl-draft-analytics" class="btn" target="_blank" style="font-size: 1rem; padding: 0.75rem 2rem;">View Full Repository on GitHub →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="content">
+            <p>© 2026 Quinn Glenn · <a href="../index.html" style="color: #AFDDE5; text-decoration: none;">Back to Portfolio</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,171 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quinn Glenn | NFL Draft Analytics Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quinn Glenn | Data Analyst & Storyteller</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <div class="container">
-        <header>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+        <div class="content">
             <h1>Quinn Glenn</h1>
-            <div class="subtitle">Data Analyst | Sports Analytics </div>
-            <div class="contact-info">
-                <a href="mailto:quinngglenn@gmail.com">Email</a>
-                <a href="tel:9714078002">(971) 407-8002</a>
-                <a href="https://github.com/QuinnG8" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/quinn-glenn-a10a11228/" target="_blank">LinkedIn</a>
+            <p class="subtitle">Data Analyst &amp; Storyteller</p>
+            <div class="contact">
+                <a href="mailto:quinngglenn@gmail.com">✉️ Email</a>
+                <a href="tel:9714078002">📞 (971) 407-8002</a>
+                <a href="https://github.com/QuinnG8" target="_blank">🐙 GitHub</a>
+                <a href="https://www.linkedin.com/in/quinn-glenn-a10a11228/" target="_blank">🔗 LinkedIn</a>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <section class="section">
-            <h2>About the Author</h2>
-            <p>I'm a computer science graduate who loves to tell stories. Whether that be through data, visualizations, or simply words, I love to learn and share what I've learned. This is my portfolio project for data analyst roles. If you're hiring, I'd love to talk.</p>
-        </section>
+    <!-- ===== ABOUT + SCORECARD ===== -->
+    <section class="about">
+        <div class="content two-col">
+            <div>
+                <h2>About Me</h2>
+                <p>I'm a data analyst with a writer's mindset. I enjoy the rigor of putting numbers into Python and SQL, finding whatever I can through dashboards, cleaning data, and solving problems with numbers. But I believe that data doesn't stop at numbers. Every data set has a story, whether that be what a first down conversion percentage means or a quarterly gain from a fortune 500 company. That's why I dedicate my free time to writing. Building a writer's mindset allows you to see the stories that others don't in their data.</p>
+                <p>I believe clarity is a skill. Whether it's a chart or a chapter, my job is to make the complex feel simple. I'm currently deep in NFL analytics, turning game data into visual stories that drive decisions.</p>
+            </div>
+            <div class="photo">
+            <img src="qGlenn.jpeg" alt="Quinn Glenn" />
+        </div>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Featured Project: NFL Draft Analytics</h2>
-            <p>A comprehensive analysis of NFL wide receiver drafts from 2017-2025, exploring the relationship between college production, combine athleticism, and NFL success.</p>
-            
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Draft Hit Rate Analysis</h3>
-                    <p>Developed tiered classification system to evaluate WR success based on statistical thresholds. Analyzed hit rates by draft round to identify value picks.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">SQLite</span>
-                        <span class="tech-tag">Pandas</span>
+    <!-- ===== FEATURED PROJECT ===== -->
+    <section class="featured">
+        <div class="content">
+            <h2>Featured Project</h2>
+            <div class="featured-card">
+                <div>
+                    <h3>NFL Draft Analytics</h3>
+                    <p>A comprehensive analysis of WR drafts from 2017–2025, exploring the link between college production, combine athleticism, and NFL success.</p>
+                    <div class="tech">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>SQL</span>
+                        <span>Matplotlib</span>
                     </div>
-                    <a href="01_draft_hit_rate.html" class="btn">View Analysis</a>
                 </div>
-                
-                <div class="project-card">
-                    <h3>College Production vs Draft Position</h3>
-                    <p>Analyzed how college yards per game correlate with where receivers are drafted, segmented by conference strength.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">SQL</span>
-                        <span class="tech-tag">Data Aggregation</span>
-                        <span class="tech-tag">Statistical Analysis</span>
-                    </div>
-                    <a href="02_college_ypg_analysis.html" class="btn">View Analysis</a>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Combine Athleticism Scatter Plot</h3>
-                    <p>Multi-dimensional visualization showing college production vs 40-yard dash time, with point size indicating draft position and color representing conference tier.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Matplotlib</span>
-                        <span class="tech-tag">Data Visualization</span>
-                        <span class="tech-tag">Python</span>
-                    </div>
-                    <a href="03_combine_scatter.html" class="btn">View Analysis</a>
-                </div>
+                <a href="nfl-draft-analytics/index.html" class="btn featured-btn">View Full Project →</a>
+            </div>
+        </div>
+    </section>
 
-                <div class="project-card">
+    <!-- ===== PROJECT GRID ===== -->
+    <section class="projects">
+        <div class="content">
+            <h2>Analysis Notebooks</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Draft Hit Rate</h3>
+                    <p>Developed a tiered classification system to evaluate WR success by round, identifying value picks and bust trends.</p>
+                    <div class="tech">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                    </div>
+                    <a href="nfl-draft-analytics/notebooks/01_draft_hit_rate.html" class="btn">View</a>
+                </div>
+                <div class="card">
+                    <h3>College Production vs. Draft Position</h3>
+                    <p>Analyzed how college yards per game correlate with draft position, segmented by conference strength.</p>
+                    <div class="tech">
+                        <span>SQL</span>
+                        <span>Stats</span>
+                    </div>
+                    <a href="nfl-draft-analytics/notebooks/02_college_ypg_analysis.html" class="btn">View</a>
+                </div>
+                <div class="card">
+                    <h3>Combine Scatter Plot</h3>
+                    <p>Multi-dimensional visualization of production vs. 40-yard dash, with point size and color encoding draft position and conference.</p>
+                    <div class="tech">
+                        <span>Matplotlib</span>
+                        <span>Viz</span>
+                    </div>
+                    <a href="nfl-draft-analytics/notebooks/03_combine_scatter.html" class="btn">View</a>
+                </div>
+                <div class="card">
                     <h3>Predictive NFL Success</h3>
-                    <p>Analyzed Next Gen Stats to discover that YAC above expected is the strongest separator between Elite and Bust receivers. Tested which college stats (yards per catch, peak TDs) and combine metrics (40 time, 3-cone, broad jump) actually predict who will excel after the catch.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Matplotlib</span>
-                        <span class="tech-tag">Data Visualization</span>
-                        <span class="tech-tag">Python</span>
+                    <p>Found that YAC above expected is the strongest separator between Elite and Bust receivers using Next Gen Stats.</p>
+                    <div class="tech">
+                        <span>Python</span>
+                        <span>Viz</span>
                     </div>
-                    <a href="04_predictive_NFL_success.html" class="btn">View Analysis</a>
+                    <a href="nfl-draft-analytics/notebooks/04_predictive_NFL_success.html" class="btn">View</a>
                 </div>
-
-                <div class="project-card">
-                    <h3>Complete WR Analysis README</h3>
-                    <p>The full documentation for my wide receiver analysis. Includes methodology overview, key findings, limitations, and what I learned across all four notebooks.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Documentation</span>
-                        <span class="tech-tag">Portfolio</span>
+                <div class="card">
+                    <h3>📖 Complete README</h3>
+                    <p>Full documentation for my WR analysis—methodology, key findings, limitations, and lessons learned.</p>
+                    <div class="tech">
+                        <span>Docs</span>
+                        <span>Portfolio</span>
                     </div>
-                    <a href="https://github.com/QuinnG8/nfl-draft-analytics/blob/main/wide_receivers/README.md" class="btn" target="_blank">View README</a>
+                    <a href="https://github.com/QuinnG8/nfl-draft-analytics/blob/main/wide_receivers/README.md" class="btn" target="_blank">View</a>
                 </div>
-
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section">
+    <!-- ===== VISUALIZATIONS ===== -->
+    <section class="visuals">
+        <div class="content">
             <h2>Key Visualizations</h2>
             <div class="visual-grid">
-                <div class="visual-item">
-                    <img src="wr_draft_hit_rates.png" alt="WR Draft Hit Rates by Round">
-                    <p>WR Draft Hit Rates by Round</p>
-                </div>
-                <div class="visual-item">
-                    <img src="college_ypg_by_draft_range.png" alt="College YPG by Draft Position">
-                    <p>College YPG by Draft Position</p>
-                </div>
-                <div class="visual-item">
-                    <img src="wr_draft_scatter_by_pick.png" alt="College Production vs Athleticism">
-                    <p>College Production vs Athleticism</p>
-                </div>
-                <div class="visual-item">
-                    <img src="college_ypg_by_draft_range_stacked.png" alt="College YPG vs Draft Position">
-                    <p>College YPG vs Draft Position</p>
-                </div>
-                <div class="visual-item">
-                    <img src="wr_metrics_by_draft_position.png" alt="Draft Position vs Athleticism/Production">
-                    <p>Draft Position vs Athleticism/Production</p>
-                </div>
+                <div class="visual-item">📊 Hit Rates</div>
+                <div class="visual-item">📈 YPG vs. Pick</div>
+                <div class="visual-item">📉 Production vs. Speed</div>
+                <div class="visual-item">📊 YPG Stacked</div>
+                <div class="visual-item">📈 Metrics by Round</div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section">
+    <!-- ===== SKILLS ===== -->
+    <section class="skills-section">
+        <div class="content">
             <h2>Technical Skills</h2>
             <div class="skills">
-                <span class="skill-badge">Python</span>
-                <span class="skill-badge">Pandas</span>
-                <span class="skill-badge">SQL</span>
-                <span class="skill-badge">SQLite</span>
-                <span class="skill-badge">Matplotlib</span>
-                <span class="skill-badge">Data Visualization</span>
-                <span class="skill-badge">Git/GitHub</span>
-                <span class="skill-badge">Statistical Analysis</span>
-                <span class="skill-badge">R</span>
-                <span class="skill-badge">JavaScript</span>
-                <span class="skill-badge">C++</span>
-                <span class="skill-badge">Excel</span>
-                <span class="skill-badge">Data Cleaning</span>
-                <span class="skill-badge">Database Design</span>
+                <span class="skill">Python</span>
+                <span class="skill">Pandas</span>
+                <span class="skill">SQL</span>
+                <span class="skill">SQLite</span>
+                <span class="skill">Matplotlib</span>
+                <span class="skill">R</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">C++</span>
+                <span class="skill">Excel</span>
+                <span class="skill">Git/GitHub</span>
+                <span class="skill">Data Viz</span>
+                <span class="skill">Stats</span>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Work Experience</h2>
-            <div style="margin-bottom: 20px;">
-                <h3>Data Operations Intern - Faria Education Group</h3>
-                <p style="color: #666;">Jun 2022 – Dec 2024 | Portland, OR</p>
-                <ul style="margin-left: 20px;">
-                    <li>Performed data validation and analysis on large-scale student information system migrations</li>
-                    <li>Collaborated cross-functionally to meet project deadlines and resolve data issues</li>
-                    <li>Developed strong time management skills in fast-paced environment</li>
-                </ul>
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="experience">
+        <div class="content two-col">
+            <div>
+                <h2>Work Experience</h2>
+                <div class="exp-item">
+                    <h3>Data Operations Intern — Faria Education Group</h3>
+                    <p class="meta">Jun 2022 – Dec 2024 | Portland, OR</p>
+                    <ul>
+                        <li>Performed data validation on large-scale student information system migrations</li>
+                        <li>Collaborated cross-functionally to meet project deadlines</li>
+                    </ul>
+                </div>
+                <div class="exp-item">
+                    <h3>Tutor — Trio</h3>
+                    <p class="meta">Sept 2022 – Dec 2023 | Corvallis, OR</p>
+                    <ul>
+                        <li>Translated complex technical concepts for non-technical learners</li>
+                        <li>Developed communication strategies for user support</li>
+                    </ul>
+                </div>
             </div>
             <div>
-                <h3>Tutor - Trio</h3>
-                <p style="color: #666;">Sept 2022 – Dec 2023 | Corvallis, OR</p>
-                <ul style="margin-left: 20px;">
-                    <li>Provided one-on-one tutoring in math and computer science</li>
-                    <li>Translated complex technical concepts for non-technical learners</li>
-                    <li>Developed communication strategies applicable to user support and training</li>
-                </ul>
+                <h2>Education</h2>
+                <h3>Oregon State University</h3>
+                <p>B.S. Applied Computer Science: Simulation &amp; Game Programming</p>
+                <p>Communications Minor | GPA: 3.95/4.0</p>
+                <p class="meta">Summa Cum Laude | Dean's List | Finley Academic Scholarship</p>
+                <p style="margin-top: 10px;"><strong>Relevant Coursework:</strong> Data Structures, Algorithms, Databases, Operating Systems, Software Engineering I/II</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section">
-            <h2>Education</h2>
-            <h3>Oregon State University</h3>
-            <p>Bachelor of Science, Applied Computer Science: Simulation and Game Programming</p>
-            <p>Communications Minor | GPA: 3.95/4.0</p>
-            <p style="color: #666;">Summa Cum Laude | Dean's List | Finley Academic Scholarship</p>
-            <p style="margin-top: 10px;"><strong>Relevant Coursework:</strong> Data Structures, Algorithms, Databases, Operating Systems, Software Engineering I/II</p>
-        </section>
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="content">
+            <p>© 2026 Quinn Glenn · Built with HTML/CSS · Hosted on GitHub Pages</p>
+        </div>
+    </footer>
 
-        <footer>
-            <p>© 2026 Quinn Glenn | Built with HTML/CSS | Hosted on GitHub Pages</p>
-        </footer>
-    </div>
 </body>
 </html>
