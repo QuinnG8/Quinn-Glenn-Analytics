@@ -42,90 +42,73 @@
     <!-- ===== FEATURED PROJECT ===== -->
     <section class="featured">
         <div class="content">
-            <h2>Featured Project</h2>
+            <h2>⭐ Featured Project</h2>
             <div class="featured-card">
-                <div>
-                    <h3>NFL Draft Analytics</h3>
-                    <p>A comprehensive analysis of WR drafts from 2017–2025, exploring the link between college production, combine athleticism, and NFL success.</p>
-                    <div class="tech">
-                        <span>Python</span>
-                        <span>Pandas</span>
-                        <span>SQL</span>
-                        <span>Matplotlib</span>
-                    </div>
-                </div>
-                <a href="nfl-draft-analytics/index.html" class="btn featured-btn">View Full Project →</a>
-            </div>
-        </div>
-    </section>
+                <div style="flex: 2;">
+                    <h3>NFL Draft Analytics: What Actually Predicts Success?</h3>
+                    <p style="margin-bottom: 0.75rem;">
+                        I combined college production, combine testing, and NFL outcomes for 292 wide receivers (2017–2025) to answer one question: <strong>Which pre-draft metrics actually separate stars from busts?</strong>
+                    </p>
 
-    <!-- ===== PROJECT GRID ===== -->
-    <section class="projects">
-        <div class="content">
-            <h2>Analysis Notebooks</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Draft Hit Rate</h3>
-                    <p>Developed a tiered classification system to evaluate WR success by round, identifying value picks and bust trends.</p>
+                    <!-- WHAT I DID -->
+                    <div style="margin: 0.75rem 0;">
+                        <strong style="color: #AFDDE5;">What I Did:</strong>
+                        <ul style="color: #AFDDE5; margin-top: 0.3rem; padding-left: 1.2rem; font-size: 0.95rem;">
+                            <li>Built a SQLite database joining college stats, combine results, and NextGen Stats</li>
+                            <li>Created a tiered classification system (Elite / Hit / Role / Bust) based on NFL production</li>
+                            <li>Analyzed which metrics correlate with draft position vs. which predict actual success</li>
+                        </ul>
+                    </div>
+
+                    <!-- WHAT I FOUND -->
+                    <div style="margin: 0.75rem 0;">
+                        <strong style="color: #AFDDE5;">What I Found:</strong>
+                        <ul style="color: #AFDDE5; margin-top: 0.3rem; padding-left: 1.2rem; font-size: 0.95rem;">
+                            <li><strong>Speed gets you drafted</strong> — 40-yard dash (r=0.38) correlates with draft position more than any college metric</li>
+                            <li><strong>YAC makes you a star</strong> — YAC above expected is the #1 separator: Elite (+1.10) vs. Bust (+0.33)</li>
+                            <li><strong>Round 2 is the value sweet spot</strong> — 78% success rate at a fraction of Round 1 cost</li>
+                            <li><strong>College TDs &amp; yards per catch</strong> matter more than volume stats like YPG</li>
+                        </ul>
+                    </div>
+
                     <div class="tech">
                         <span>Python</span>
                         <span>Pandas</span>
-                    </div>
-                    <a href="nfl-draft-analytics/notebooks/01_draft_hit_rate.html" class="btn">View</a>
-                </div>
-                <div class="card">
-                    <h3>College Production vs. Draft Position</h3>
-                    <p>Analyzed how college yards per game correlate with draft position, segmented by conference strength.</p>
-                    <div class="tech">
                         <span>SQL</span>
-                        <span>Stats</span>
-                    </div>
-                    <a href="nfl-draft-analytics/notebooks/02_college_ypg_analysis.html" class="btn">View</a>
-                </div>
-                <div class="card">
-                    <h3>Combine Scatter Plot</h3>
-                    <p>Multi-dimensional visualization of production vs. 40-yard dash, with point size and color encoding draft position and conference.</p>
-                    <div class="tech">
+                        <span>SQLite</span>
                         <span>Matplotlib</span>
-                        <span>Viz</span>
                     </div>
-                    <a href="nfl-draft-analytics/notebooks/03_combine_scatter.html" class="btn">View</a>
                 </div>
-                <div class="card">
-                    <h3>Predictive NFL Success</h3>
-                    <p>Found that YAC above expected is the strongest separator between Elite and Bust receivers using Next Gen Stats.</p>
-                    <div class="tech">
-                        <span>Python</span>
-                        <span>Viz</span>
+
+                <!-- VISUALS COLUMN -->
+                <div style="flex: 1.5; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; min-width: 200px;">
+
+                    <!-- Visual 1: Scatter Plot -->
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 0.5rem; width: 100%; max-width: 300px; text-align: center;">
+                        <img src="nfl-draft-analytics/wr_visuals/wr_draft_scatter_by_pick.png" alt="WR Draft Scatter Plot: Speed vs Production" style="width:100%; border-radius: 8px;" />
+                        <p style="color: #AFDDE5; font-size: 0.7rem; margin-top: 0.2rem;">40-time vs. draft position — speed drives where you're picked</p>
                     </div>
-                    <a href="nfl-draft-analytics/notebooks/04_predictive_NFL_success.html" class="btn">View</a>
-                </div>
-                <div class="card">
-                    <h3>📖 Complete README</h3>
-                    <p>Full documentation for my WR analysis—methodology, key findings, limitations, and lessons learned.</p>
-                    <div class="tech">
-                        <span>Docs</span>
-                        <span>Portfolio</span>
+
+                    <!-- Visual 2: Hit Rate by Round (Bar Chart) -->
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 0.5rem; width: 100%; max-width: 300px; text-align: center;">
+                        <img src="nfl-draft-analytics/wr_visuals/wr_draft_hit_rates.png" alt="WR Hit Rate by Draft Round" style="width:100%; border-radius: 8px;" />
+                        <p style="color: #AFDDE5; font-size: 0.7rem; margin-top: 0.2rem;">Hit rate drops sharply after Round 2</p>
                     </div>
-                    <a href="https://github.com/QuinnG8/nfl-draft-analytics/blob/main/wide_receivers/README.md" class="btn" target="_blank">View</a>
+
+                    <!-- Visual 3: YAC Above Expected by Tier (Bar Chart) -->
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 0.5rem; width: 100%; max-width: 300px; text-align: center;">
+                        <img src="nfl-draft-analytics/wr_visuals/college_ypc_nfl_yac.png" alt="YAC Above Expected by NFL Tier" style="width:100%; border-radius: 8px;" />
+                        <p style="color: #AFDDE5; font-size: 0.7rem; margin-top: 0.2rem;">YAC above expected: the true separator of NFL success, with college YPC being the biggest predictor of YAC above expected</p>
+                    </div>
+
+                    <!-- BUTTON - Now centered below all visuals -->
+                    <a href="nfl-draft-analytics/index.html" class="btn featured-btn" style="margin-top: 0.5rem; text-align: center;">View Full Project →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== VISUALIZATIONS ===== -->
-    <section class="visuals">
-        <div class="content">
-            <h2>Key Visualizations</h2>
-            <div class="visual-grid">
-                <div class="visual-item">📊 Hit Rates</div>
-                <div class="visual-item">📈 YPG vs. Pick</div>
-                <div class="visual-item">📉 Production vs. Speed</div>
-                <div class="visual-item">📊 YPG Stacked</div>
-                <div class="visual-item">📈 Metrics by Round</div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- ===== SKILLS ===== -->
     <section class="skills-section">
