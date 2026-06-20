@@ -14,7 +14,6 @@
     <!-- ===== HERO ===== -->
     <header class="hero" style="padding: 2.5rem 2rem;">
         <div class="content" style="text-align: center;">
-            <a href="../index.html" class="back-link">← Back to Portfolio</a>
             <h1 style="font-size: 2.8rem; margin-top: 1rem;">NFL Draft Analytics</h1>
             <p class="subtitle" style="color: #AFDDE5;">Wide Receiver Analysis · 2017–2025</p>
         </div>
@@ -24,26 +23,43 @@
     <section class="about">
         <div class="content">
             <h2>Project Overview</h2>
-            <p>This project explores the relationship between college production, combine athleticism, and NFL success for wide receivers drafted from 2017 to 2025. The goal was to identify which metrics actually predict professional performance and where teams find the best value in the draft.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1.5rem;">
-                <div>
-                    <strong style="color: #003135;">Tools Used</strong>
-                    <div class="skills" style="margin-top: 0.5rem;">
-                        <span class="skill">Python</span>
-                        <span class="skill">Pandas</span>
-                        <span class="skill">SQL</span>
-                        <span class="skill">SQLite</span>
-                        <span class="skill">Matplotlib</span>
+            <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                This project explores the relationship between college production, combine athleticism, and NFL success for wide receivers drafted from 2017 to 2025. The goal was to identify which metrics actually predict professional performance and where teams find the best value in the draft.
+            </p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; margin-top: 0.5rem;">
+                
+                <!-- Tools Used -->
+                <div style="flex: 1; min-width: 200px; background: white; padding: 1.25rem 1.5rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,49,53,0.06); border-left: 4px solid #0FA4AF;">
+                    <strong style="color: #003135; display: block; margin-bottom: 0.75rem; font-size: 1rem;">Tools Used</strong>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="skill" style="background: #e8f0f5; padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.8rem; color: #003135;">Python</span>
+                        <span class="skill" style="background: #e8f0f5; padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.8rem; color: #003135;">Pandas</span>
+                        <span class="skill" style="background: #e8f0f5; padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.8rem; color: #003135;">SQL</span>
+                        <span class="skill" style="background: #e8f0f5; padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.8rem; color: #003135;">SQLite</span>
+                        <span class="skill" style="background: #e8f0f5; padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.8rem; color: #003135;">Matplotlib</span>
                     </div>
                 </div>
-                <div>
-                    <strong style="color: #003135;">Key Questions</strong>
-                    <ul style="margin-top: 0.5rem; padding-left: 1.2rem; color: #024950;">
-                        <li>Which college stats matter most for NFL success?</li>
-                        <li>What's the hit rate by draft round?</li>
-                        <li>Does athleticism predict performance?</li>
+                
+                <!-- Key Questions -->
+                <div style="flex: 1.5; min-width: 250px; background: #003135; padding: 1.25rem 1.5rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,49,53,0.06);">
+                    <strong style="color: #AFDDE5; display: block; margin-bottom: 0.75rem; font-size: 1rem;">Key Questions</strong>
+                    <ul style="padding-left: 0; list-style: none; margin: 0; color: #e0e8f0;">
+                        <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; font-size: 0.95rem; line-height: 1.4;">
+                            <span style="position: absolute; left: 0; color: #0FA4AF; font-weight: 700;">▸</span>
+                            Which college stats matter most for NFL success?
+                        </li>
+                        <li style="margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; font-size: 0.95rem; line-height: 1.4;">
+                            <span style="position: absolute; left: 0; color: #0FA4AF; font-weight: 700;">▸</span>
+                            What's the hit rate by draft round?
+                        </li>
+                        <li style="padding-left: 1.5rem; position: relative; font-size: 0.95rem; line-height: 1.4;">
+                            <span style="position: absolute; left: 0; color: #0FA4AF; font-weight: 700;">▸</span>
+                            Does athleticism predict performance, or is it just a draft-day signal?
+                        </li>
                     </ul>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -110,23 +126,62 @@
     <section class="visuals" style="background: #AFDDE5;">
         <div class="content">
             <h2>Key Visualizations</h2>
-            <div class="visual-grid">
-                <div class="visual-item">
-                    <img src="images/wr_draft_hit_rates.png" alt="WR Draft Hit Rates" style="width:100%; height:100%; object-fit:cover; border-radius:8px;" />
+            <div class="visual-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
+                
+                <!-- Visual 1 -->
+                <div class="visual-item" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); overflow: hidden; display: flex; flex-direction: column;">
+                    <a href="wr_visuals/wr_draft_hit_rates.png" target="_blank" style="display: block; padding: 0.75rem 0.75rem 0 0.75rem;">
+                        <img src="wr_visuals/wr_draft_hit_rates.png" alt="WR Draft Hit Rates" style="width:100%; height:auto; border-radius: 8px;" />
+                    </a>
+                    <div style="padding: 0.5rem 0.75rem 0.75rem 0.75rem; text-align: center;">
+                        <p style="margin: 0; font-size: 0.8rem; color: #003135; font-weight: 500; line-height: 1.3;">Hit Rate by Draft Round — Round 2 offers the best value</p>
+                    </div>
                 </div>
-                <div class="visual-item">
-                    <img src="images/college_ypg_by_draft_range.png" alt="College YPG by Draft Position" style="width:100%; height:100%; object-fit:cover; border-radius:8px;" />
+                
+                <!-- Visual 2 -->
+                <div class="visual-item" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); overflow: hidden; display: flex; flex-direction: column;">
+                    <a href="wr_visuals/college_ypg_by_draft_range.png" target="_blank" style="display: block; padding: 0.75rem 0.75rem 0 0.75rem;">
+                        <img src="wr_visuals/college_ypg_by_draft_range.png" alt="College YPG by Draft Position" style="width:100%; height:auto; border-radius: 8px;" />
+                    </a>
+                    <div style="padding: 0.5rem 0.75rem 0.75rem 0.75rem; text-align: center;">
+                        <p style="margin: 0; font-size: 0.8rem; color: #003135; font-weight: 500; line-height: 1.3;">College YPG by Draft Position — Elite producers found in every round</p>
+                    </div>
                 </div>
-                <div class="visual-item">
-                    <img src="images/wr_draft_scatter_by_pick.png" alt="College Production vs Athleticism" style="width:100%; height:100%; object-fit:cover; border-radius:8px;" />
+                
+                <!-- Visual 3 -->
+                <div class="visual-item" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); overflow: hidden; display: flex; flex-direction: column;">
+                    <a href="wr_visuals/wr_draft_scatter_by_pick.png" target="_blank" style="display: block; padding: 0.75rem 0.75rem 0 0.75rem;">
+                        <img src="wr_visuals/wr_draft_scatter_by_pick.png" alt="College Production vs Athleticism" style="width:100%; height:180px; object-fit:contain; border-radius: 8px; background: #f8fafc;" />
+                    </a>
+                    <div style="padding: 0.5rem 0.75rem 0.75rem 0.75rem; text-align: center;">
+                        <p style="margin: 0; font-size: 0.8rem; color: #003135; font-weight: 500; line-height: 1.3;">Speed vs. Production — 40-time drives draft position (r=0.38)</p>
+                    </div>
                 </div>
-                <div class="visual-item">
-                    <img src="images/college_ypg_by_draft_range_stacked.png" alt="College YPG vs Draft Position" style="width:100%; height:100%; object-fit:cover; border-radius:8px;" />
+                
+                <!-- Visual 4 -->
+                <div class="visual-item" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); overflow: hidden; display: flex; flex-direction: column;">
+                    <a href="wr_visuals/college_ypg_by_draft_range_stacked.png" target="_blank" style="display: block; padding: 0.75rem 0.75rem 0 0.75rem;">
+                        <img src="wr_visuals/college_ypg_by_draft_range_stacked.png" alt="College YPG vs Draft Position" style="width:100%; height:auto; border-radius: 8px;" />
+                    </a>
+                    <div style="padding: 0.5rem 0.75rem 0.75rem 0.75rem; text-align: center;">
+                        <p style="margin: 0; font-size: 0.8rem; color: #003135; font-weight: 500; line-height: 1.3;">College YPG Distribution — The 50-70 YPG baseline is consistent across all rounds</p>
+                    </div>
                 </div>
-                <div class="visual-item">
-                    <img src="images/wr_metrics_by_draft_position.png" alt="Draft Position vs Athleticism/Production" style="width:100%; height:100%; object-fit:cover; border-radius:8px;" />
+                
+                <!-- Visual 5 -->
+                <div class="visual-item" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); overflow: hidden; display: flex; flex-direction: column;">
+                    <a href="wr_visuals/wr_metrics_by_round.png" target="_blank" style="display: block; padding: 0.75rem 0.75rem 0 0.75rem;">
+                        <img src="wr_visuals/wr_metrics_by_round.png" alt="Draft Position vs Athleticism/Production" style="width:100%; height:auto; border-radius: 8px;" />
+                    </a>
+                    <div style="padding: 0.5rem 0.75rem 0.75rem 0.75rem; text-align: center;">
+                        <p style="margin: 0; font-size: 0.8rem; color: #003135; font-weight: 500; line-height: 1.3;">Metrics by Round — How production and athleticism shift across rounds</p>
+                    </div>
                 </div>
+                
             </div>
+            <p style="text-align: center; margin-top: 1.25rem; font-size: 0.85rem; color: #024950; opacity: 0.8;">
+                Click any visualization to view full size
+            </p>
         </div>
     </section>
 
@@ -134,26 +189,61 @@
     <section class="experience" style="background: white;">
         <div class="content">
             <h2>Key Takeaways &amp; Next Steps</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                <div>
-                    <h3 style="color: #003135;">📊 Key Findings</h3>
-                    <ul style="padding-left: 1.2rem; color: #024950;">
-                        <li>YAC above expected is the strongest separator between Elite and Bust receivers</li>
-                        <li>College yards per game strongly correlates with draft position</li>
-                        <li>Hit rates drop sharply after Round 3</li>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
+                
+                <!-- KEY FINDINGS -->
+                <div style="background: #f8fafc; padding: 1.5rem 2rem; border-radius: 16px; border-left: 4px solid #0FA4AF;">
+                    <h3 style="color: #003135; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.5rem;"></span> Key Findings
+                    </h3>
+                    <ul style="padding-left: 0; list-style: none; color: #024950;">
+                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #0FA4AF; font-weight: 700;">▸</span>
+                            <strong>YAC above expected</strong> is the #1 separator: Elite (+1.10) vs. Bust (+0.33)
+                        </li>
+                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #0FA4AF; font-weight: 700;">▸</span>
+                            <strong>40-yard dash</strong> drives draft position (r=0.38) but not NFL success
+                        </li>
+                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #0FA4AF; font-weight: 700;">▸</span>
+                            <strong>College TDs &amp; yards per catch</strong> predict YAC ability better than volume stats
+                        </li>
+                        <li style="padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #0FA4AF; font-weight: 700;">▸</span>
+                            <strong>Round 2</strong> offers the best value (78% success rate, 14.6% elite rate)
+                        </li>
                     </ul>
                 </div>
-                <div>
-                    <h3 style="color: #003135;">🚀 What's Next</h3>
-                    <ul style="padding-left: 1.2rem; color: #024950;">
-                        <li>Add QB and RB position analysis</li>
-                        <li>Build an interactive dashboard</li>
-                        <li>Create a predictive model for draft success</li>
+                
+                <!-- WHAT'S NEXT -->
+                <div style="background: #003135; padding: 1.5rem 2rem; border-radius: 16px; color: white;">
+                    <h3 style="color: #AFDDE5; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.5rem;"></span> What's Next
+                    </h3>
+                    <ul style="padding-left: 0; list-style: none; color: #e0e8f0;">
+                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #0FA4AF; font-weight: 700;">▸</span>
+                            <strong>Defensive Line Analysis</strong> — Apply the same framework to EDGE and interior defenders
+                        </li>
+                        <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #0FA4AF; font-weight: 700;">▸</span>
+                            <strong>Team Draft Strategy</strong> — Analyze how specific teams draft at each position and their success rates
+                        </li>
+                        <li style="padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #0FA4AF; font-weight: 700;">▸</span>
+                            <strong>Interactive Dashboard</strong> — Build a Tableau or Power BI dashboard to make these insights accessible to non-technical users
+                        </li>
                     </ul>
                 </div>
+                
             </div>
-            <div style="margin-top: 2rem; text-align: center;">
-                <a href="https://github.com/QuinnG8/nfl-draft-analytics" class="btn" target="_blank" style="font-size: 1rem; padding: 0.75rem 2rem;">View Full Repository on GitHub →</a>
+            
+            <div style="margin-top: 2.5rem; text-align: center;">
+                <a href="https://github.com/QuinnG8/Quinn-Glenn-Analytics" class="btn" target="_blank" style="font-size: 1rem; padding: 0.75rem 2.5rem; background: #003135; color: white; border-radius: 30px; font-weight: 600; transition: all 0.3s;">
+                    View Full Repository on GitHub →
+                </a>
             </div>
         </div>
     </section>
@@ -161,7 +251,10 @@
     <!-- ===== FOOTER ===== -->
     <footer>
         <div class="content">
-            <p>© 2026 Quinn Glenn · <a href="../index.html" style="color: #AFDDE5; text-decoration: none;">Back to Portfolio</a></p>
+            <p style="margin-bottom: 0.25rem;">
+                <a href="../index.html" style="color: #AFDDE5; text-decoration: none; font-weight: 600;">← Back to Portfolio</a>
+            </p>
+            <p style="font-size: 0.85rem; opacity: 0.7;">© 2026 Quinn Glenn</p>
         </div>
     </footer>
 

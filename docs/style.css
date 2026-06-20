@@ -454,3 +454,21 @@ footer .content {
         text-align: center;
     }
 }
+
+/* ===== Visual Effect ===== */
+.visual-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.visual-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,49,53,0.12);
+}
+
+.visual-item a {
+    transition: opacity 0.2s ease;
+}
+
+.visual-item a:hover {
+    opacity: 0.9;
+}
