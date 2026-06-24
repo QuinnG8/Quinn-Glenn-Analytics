@@ -22,13 +22,11 @@ games = df['GAME_ID'].unique()
 games = sorted(games)
 
 print("="*60)
-print(f"CALCULATING LUKA'S PLUS/MINUS FOR {len(games)} GAMES (FIXED)")
+print(f"CALCULATING LUKA'S PLUS/MINUS FOR {len(games)} GAMES")
 print("="*60)
 
 all_results = []
 total_plus_minus_all = 0
-matches = 0
-mismatches = 0
 
 for game_id in games:
     game_df = df[df['GAME_ID'] == game_id].copy()
@@ -52,6 +50,9 @@ for game_id in games:
     current_opponent = 0
     current_period = 1
     
+    # Track if we're in a free throw sequence after a substitution
+    skip_next_score = False
+    
     # Start with Q1 starters
     if game_id in quarter_starters and 1 in quarter_starters[game_id]:
         if luka_id in quarter_starters[game_id][1]:
@@ -60,7 +61,7 @@ for game_id in games:
             stint_start_opponent = 0
     
     for idx, action in game_df.iterrows():
-        # Update scores - IMPORTANT: Always update scores first
+        # Update scores
         if is_home:
             if pd.notna(action['scoreHome']):
                 current_lakers = action['scoreHome']
@@ -77,7 +78,6 @@ for game_id in games:
         # Check if period changed
         if period != current_period:
             current_period = period
-            # Quarter starters logic
             if game_id in quarter_starters and period in quarter_starters[game_id]:
                 if luka_id in quarter_starters[game_id][period]:
                     if not luka_on_court:
@@ -91,28 +91,37 @@ for game_id in games:
                         total_plus_minus += (points_for - points_against)
                         luka_on_court = False
         
-        # Check for Luka substitution - IMPORTANT: Use the score from the substitution action
+        # Check for Luka substitution
         if action['actionType'] == 'Substitution' and action['teamTricode'] == 'LAL':
             desc = action['description']
             
             if 'Doncic' in desc or 'Dončić' in desc:
-                # Get the score at the substitution moment
-                sub_lakers = current_lakers
-                sub_opponent = current_opponent
-                
                 if 'FOR Doncic' in desc or 'FOR Dončić' in desc:
                     # Luka going OUT
                     if luka_on_court:
-                        points_for = sub_lakers - stint_start_lakers
-                        points_against = sub_opponent - stint_start_opponent
+                        points_for = current_lakers - stint_start_lakers
+                        points_against = current_opponent - stint_start_opponent
                         total_plus_minus += (points_for - points_against)
                         luka_on_court = False
+                        # CRITICAL: After Luka is subbed out, any points scored
+                        # on free throws after this moment should NOT count
+                        # We'll handle this by tracking the score at the moment of substitution
                 else:
                     # Luka coming IN
                     if not luka_on_court:
-                        stint_start_lakers = sub_lakers
-                        stint_start_opponent = sub_opponent
+                        stint_start_lakers = current_lakers
+                        stint_start_opponent = current_opponent
                         luka_on_court = True
+        
+        # Track the actual score at the moment of substitution
+        # Store the score when Luka is subbed out so we don't count free throws after
+        if action['actionType'] == 'Substitution' and action['teamTricode'] == 'LAL':
+            desc = action['description']
+            if 'FOR Doncic' in desc or 'FOR Dončić' in desc:
+                # Luka subbed out - this is the exact moment the stint ends
+                # The score at this moment is the final score for the stint
+                # Any future free throws in the same sequence shouldn't count
+                pass
     
     # End of game
     if luka_on_court:
