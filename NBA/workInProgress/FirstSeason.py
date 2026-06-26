@@ -6,7 +6,6 @@ import time
 # Fine Lakers Team ID
 lakers = teams.find_team_by_abbreviation('LAL')
 lakers_id = lakers['id']
-time.sleep(1.0)
 
 print(f"Lakers Team ID: {lakers_id}")
 
@@ -33,18 +32,21 @@ print("\nFinding all games with Luka...")
 for idx, game_id in enumerate(games_to_check, 1):
     print(f"  Checking game {idx}/{len(games_to_check)}: {game_id}", end='') 
 
-    boxscore = boxscoretraditionalv3.BoxScoreTraditionalV3(game_id=game_id)
-    player_stats = boxscore.player_stats.get_data_frame()
+    try:
+        boxscore = boxscoretraditionalv3.BoxScoreTraditionalV3(game_id=game_id)
+        player_stats = boxscore.player_stats.get_data_frame()
 
-    has_luka = (player_stats['personId'] == 1629029).any()    
-        
-    if has_luka:
-        print(f"✓")
-        games_to_fetch.append(game_id)
-    else:
-        print(f"✗")
+        has_luka = (player_stats['personId'] == 1629029).any()    
+            
+        if has_luka:
+            print(f"✓")
+            games_to_fetch.append(game_id)
+        else:
+            print(f"✗")
 
-    time.sleep(0.3)
+        time.sleep(0.3)
+    except Exception as e:
+        print("Error")
             
 print(f"\n✅ Found Luka in {len(games_to_fetch)} games")
     
@@ -52,21 +54,63 @@ print(f"\n✅ Found Luka in {len(games_to_fetch)} games")
 if games_to_fetch:
     all_plays = []
     all_starters = []
-    all_box_scores = []
 
     for game_num, game_id in enumerate(games_to_fetch, 1):
         print(f"\n Processing game {game_num}/{len(games_to_fetch)}: {game_id}")
+        try:
+            pbp = playbyplayv3.PlayByPlayV3(game_id=game_id)
+            pbp_df = pbp.get_data_frames()[0]
 
-        pbp = playbyplayv3.PlayByPlayV3(game_id=game_id)
-        pbp_df = pbp.get_data_frames()[0]
+            pbp_df['GAME_ID'] = game_id
 
-        pbp_df['GAME_ID'] = game_id
+            pbp_df = pbp_df.sort_values(['period', 'actionNumber'])
 
-        pbp_df = pbp_df.sort_values(['period', 'actionNumber'])
+            # Find starters for each quarter
+            quarter_starters = {}
+            current_period = 1
+            players_seen = set()
 
-        # Find starters for each quarter
-        quarer_starters = {}
-        current_period = 1
-        players_seen = set()
+            for idx, action in pbp_df.iterrows():
+                period = action['period']
+                team = action['teamTricode']
+                player_id = action['personId']
 
+                # Reset at change of period
+                if period != current_period:
+                    current_period = period
+                    players_seen = set()
+                
+                # If the player is on LA and we haven't seen them yet
+                if team == 'LAL' and player_id != 0 and player_id not in players_seen:
+                    players_seen.add(player_id)
+                
+                    # If we have the 5 players, we found the starters for this quarter
+                    if len(players_seen) == 5:
+                        quarter_starters[period] = list(players_seen)
+
+            
+            # Add to all plays
+            all_plays.append(pbp_df)
+
+            # Store all starters to each quarter for this game
+            for period, starters in quarter_starters.items():
+                all_starters.append({
+                    'GAME_ID': game_id,
+                    'period': period,
+                    'starter_ids': str(starters)
+                })
+        except Exception as e:
+            print("Error")
+
+
+    if all_plays:
+        full_df = pd.concat(all_plays, ignore_index=True)
+        full_df.to_csv('luka_all_games_complete.csv', index=False)
+
+        # Save all quarter starters
+        if all_starters:
+            starters_df = pd.DataFrame(all_starters)
+            starters_df.to_csv('all_games_quarter_starters.csv', index=False)
+
+        
         
