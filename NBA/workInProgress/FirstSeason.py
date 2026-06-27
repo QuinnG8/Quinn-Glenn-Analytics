@@ -105,12 +105,12 @@ if games_to_fetch:
 
     if all_plays:
         full_df = pd.concat(all_plays, ignore_index=True)
-        full_df.to_csv('luka_all_games_complete.csv', index=False)
+        full_df.to_csv('lakers_2024_25.csv', index=False)
 
         # Save all quarter starters
         if all_starters:
             starters_df = pd.DataFrame(all_starters)
-            starters_df.to_csv('all_games_quarter_starters.csv', index=False)
+            starters_df.to_csv('lakers_2024_25_quarter_starters.csv', index=False)
 
         
         
