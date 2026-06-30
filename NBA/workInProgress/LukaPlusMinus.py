@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Load the data
-df = pd.read_csv('luka_all_games_complete.csv')
-starter_df = pd.read_csv('all_games_quarter_starters.csv')
+df = pd.read_csv('lakers_2024_25.csv')
+starter_df = pd.read_csv('lakers_2024_25_quarter_starters.csv')
 
 luka_id = 1629029
 
