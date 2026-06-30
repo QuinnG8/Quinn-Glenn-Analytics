@@ -2,8 +2,8 @@ import pandas as pd
 from collections import defaultdict
 
 # Load the data
-df = pd.read_csv('luka_all_games_complete.csv')
-starter_df = pd.read_csv('all_games_quarter_starters.csv')
+df = pd.read_csv('lakers_2024_25.csv')
+starter_df = pd.read_csv('lakers_2024_25_quarter_starters.csv')
 
 luka_id = 1629029
 
@@ -21,10 +21,6 @@ for _, row in starter_df.iterrows():
 # Get all games
 games = df['GAME_ID'].unique()
 games = sorted(games)
-
-print("="*60)
-print(f"TRACKING LUKA'S LINEUP STINTS AND POSSESSIONS FOR {len(games)} GAMES")
-print("="*60)
 
 # Track all lineups across all games
 lineup_data = defaultdict(lambda: {
